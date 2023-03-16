@@ -104,6 +104,13 @@ button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-left: 0 auto; 
     margin-right: 0 auto;}
+
+.resume1:hover {
+    background-color: #d16969;
+}
+.projectbttn:hover {
+    background-color: #d16969;
+}
 body { 
     background-image: url("../images/grid.png");
     background-color: #faf4e8;
@@ -130,6 +137,11 @@ body {
 }
 
 .image2 {
+    position: static;
+    height: min-content;
+    width: min-content;
+}
+.image3 {
     position: static;
     height: min-content;
     width: min-content;
