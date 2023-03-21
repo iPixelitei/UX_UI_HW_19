@@ -31,13 +31,13 @@ html {
   font-family: 'Gill Sans MT';
   color: white
 }
-img {
+.image1 {
     height: 420px;
     padding: 0px;
     display:block;
     margin-left: auto;
     margin-right: auto;
-    position: static;
+   
 
 }
 section { 
@@ -66,7 +66,7 @@ h2 {
     font-family: 'Cooper Black'; 
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     letter-spacing: 0.1em;
     color:#371700;
@@ -105,7 +105,8 @@ p {
     height: 240px; 
     margin-left: auto; 
     margin-right: auto;
-    margin-bottom: -50px;}
+    margin-bottom: -50px;
+    padding: 0 auto;}
 button {
     font-family: 'Gill Sans MT';
     font-style: normal;
@@ -125,8 +126,42 @@ button {
 .resume1:hover {
     background-color: #d16969;
 }
+/* Define the rubberband animation */
+@keyframes rubberBand {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scaleX(1.25) scaleY(0.75);
+    }
+    40% {
+      transform: scaleX(0.75) scaleY(1.25);
+    }
+    50% {
+      transform: scaleX(1.15) scaleY(0.85);
+    }
+    65% {
+      transform: scaleX(0.95) scaleY(1.05);
+    }
+    75% {
+      transform: scaleX(1.05) scaleY(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply the rubberband animation to the button when it is clicked */
+  .resume1:focus {
+    animation-name: rubberBand;
+    animation-duration: 1s;
+  }
 .projectbttn:hover {
     background-color: #d16969;
+}
+.projectbttn:focus {
+    animation-name: rubberBand;
+    animation-duration: 1s;
 }
 body { 
     background-image: url("../images/grid.png");
@@ -190,15 +225,5 @@ body {
     50% {transform: rotate(360deg);}
     100% {transform: rotate(720deg);}
 }
-.workGrid {
-    position: relative;
-  }
-.carousel-container {
-    display: flex;
-    overflow: hidden;
-  }
-  .carousel-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+
+  
