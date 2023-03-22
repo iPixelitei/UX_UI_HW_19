@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
   }
+
 .nav a {
     display: inline-block;
     padding: 8px 16px;
@@ -171,25 +172,37 @@ body {
 .flexContainer {
     display: flex;
     height: auto;
-    width: 45%;
+    width: 100%;
     margin: auto;
     padding: 20px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;}
+
 .flexContainer > div {
     background-color: #e28c8c;
-    justify-content: space-around;
     border-radius: 80px 80px 0px 0px;
     margin: 20px;
     padding: 20px;
 }
+@media only screen and (min-width: 768px) {  
+.flexContainer {
+    flex-direction: row;
+    justify-content: center;
+ }
+      
+.flexContainer > div {
+   border-radius: 80px 80px 0px 0px;
+  margin: 20px;
+   padding: 20px;
+   }
+}
 .projectDescription1 {
-    width: 70%;
+    width: 100%;
     margin-bottom: auto ;
 }
 .projectDescription2 {
-    width: 70%;
-    flex-wrap: wrap;
+    width: 100%;
+
     margin-bottom: auto ;
 }
 .image2 {
@@ -224,6 +237,61 @@ body {
     0% {transform: rotate(0deg);}
     50% {transform: rotate(360deg);}
     100% {transform: rotate(720deg);}
+}
+.workGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .workGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.projectDescription1, .projectDescription2 {
+  margin-bottom: 20px;
+}
+
+.carousel1, .carousel2 {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel1 ul, .carousel2 ul {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel1 li, .carousel2 li {
+  flex: 0 0 auto;
+  width: 100%;
+  margin-right: 20px;
+  scroll-snap-align: center;
+}
+
+.carousel1 img, .carousel2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .carousel1, .carousel2 {
+    overflow-x: hidden;
+  }
+  
+  .carousel1 li:last-of-type, .carousel2 li:last-of-type {
+    margin-right: 0;
+  }
 }
 
   
